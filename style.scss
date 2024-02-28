@@ -1,0 +1,384 @@
+$animation-duration: 6s;
+$cube-size: 4em;
+$cube-color: #0f0f36;
+$background-color: #afafaf;
+$bg-grid: "https://img.freepik.com/free-photo/blue-border-abstract-pixel-rain-background_53876-102582.jpg";
+$bg-image1: "https://img.freepik.com/premium-photo/fiber-optic-led-touchscreen-robot-angelarium-interface_31965-158242.jpg";
+$bg-image2: "https://img.freepik.com/free-photo/rpa-concept-with-blurry-hand-touching-screen_23-2149311914.jpg";
+$bg-image3: "https://img.freepik.com/free-photo/light-trails-buildings_1359-715.jpg";
+$bg-image4: "https://img.freepik.com/free-vector/global-connection-technology-template-computer-business-social-media-post_53876-119597.jpg";
+$bg-image5: "https://img.freepik.com/premium-photo/fiber-optic-led-touchscreen-robot-angelarium-interface_31965-182751.jpg";
+$bg-image6: "https://img.freepik.com/premium-photo/metaverse-technology-future-concept-vr-virtual-digital-reality-cyber-metaverse-simulation-innovation-connection-global-blockchain-experiences-network-futuristic-3d-rendering_839035-144943.jpg";
+
+body {
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+  perspective: 32em;
+  background: $background-color;
+}
+
+div {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.assembly {
+  top: 50%;
+  left: 50%;
+  transform: rotateX(-18deg) rotateY(-136deg);
+  animation: cemara 90s ease-in-out infinite;
+}
+
+.comp-3d {
+  animation: r $animation-duration ease-in-out infinite;
+}
+.comp-3d--i {
+  animation-name: ri;
+}
+.comp-3d--o {
+  animation-name: ro;
+}
+.pos:nth-child(1) {
+  transform: scale3d(1, 1, 1) translate3d($cube-size, $cube-size, $cube-size);
+}
+
+:not(.pos) > .cube:nth-child(1) {
+  transform: translate3d(-$cube-size, -$cube-size, 0em);
+}
+
+.pos:nth-child(2) {
+  transform: scale3d(1, 1, -1) translate3d($cube-size, $cube-size, $cube-size);
+}
+
+:not(.pos) > .cube:nth-child(2) {
+  transform: translate3d(-$cube-size, 0em, -$cube-size);
+}
+
+:not(.pos) > .cube:nth-child(3) {
+  transform: translate3d(-$cube-size, 0em, 0em);
+}
+
+:not(.pos) > .cube:nth-child(4) {
+  transform: translate3d(-$cube-size, 0em, $cube-size);
+}
+
+.pos:nth-child(3) {
+  transform: scale3d(1, -1, 1) translate3d($cube-size, $cube-size, $cube-size);
+}
+
+:not(.pos) > .cube:nth-child(5) {
+  transform: translate3d(-$cube-size, $cube-size, 0em);
+}
+
+.pos:nth-child(4) {
+  transform: scale3d(1, -1, -1) translate3d($cube-size, $cube-size, $cube-size);
+}
+
+:not(.pos) > .cube:nth-child(6) {
+  transform: translate3d(0em, -$cube-size, -$cube-size);
+}
+
+:not(.pos) > .cube:nth-child(7) {
+  transform: translate3d(0em, -$cube-size, 0em);
+}
+
+:not(.pos) > .cube:nth-child(8) {
+  transform: translate3d(0em, -$cube-size, $cube-size);
+}
+
+:not(.pos) > .cube:nth-child(9) {
+  transform: translate3d(0em, 0em, -$cube-size);
+}
+
+:not(.pos) > .cube:nth-child(10) {
+  transform: translate3d(0em, 0em, 0em);
+}
+
+:not(.pos) > .cube:nth-child(11) {
+  transform: translate3d(0em, 0em, $cube-size);
+}
+
+:not(.pos) > .cube:nth-child(12) {
+  transform: translate3d(0em, $cube-size, -$cube-size);
+}
+
+:not(.pos) > .cube:nth-child(13) {
+  transform: translate3d(0em, $cube-size, 0em);
+}
+
+:not(.pos) > .cube:nth-child(14) {
+  transform: translate3d(0em, $cube-size, $cube-size);
+}
+
+.pos:nth-child(5) {
+  transform: scale3d(-1, 1, 1) translate3d($cube-size, $cube-size, $cube-size);
+}
+
+:not(.pos) > .cube:nth-child(15) {
+  transform: translate3d($cube-size, -$cube-size, 0em);
+}
+
+.pos:nth-child(6) {
+  transform: scale3d(-1, 1, -1) translate3d($cube-size, $cube-size, $cube-size);
+}
+
+:not(.pos) > .cube:nth-child(16) {
+  transform: translate3d($cube-size, 0em, -$cube-size);
+}
+
+:not(.pos) > .cube:nth-child(17) {
+  transform: translate3d($cube-size, 0em, 0em);
+}
+
+:not(.pos) > .cube:nth-child(18) {
+  transform: translate3d($cube-size, 0em, $cube-size);
+}
+
+.pos:nth-child(7) {
+  transform: scale3d(-1, -1, 1) translate3d($cube-size, $cube-size, $cube-size);
+}
+
+:not(.pos) > .cube:nth-child(19) {
+  transform: translate3d($cube-size, $cube-size, 0em);
+}
+
+.pos:nth-child(8) {
+  transform: scale3d(-1, -1, -1) translate3d($cube-size, $cube-size, $cube-size);
+}
+
+.pos .cube {
+  animation: m $animation-duration ease-out infinite;
+}
+.cube__face {
+  margin: -#{$cube-size/2};
+  width: $cube-size;
+  height: $cube-size;
+  box-shadow: 0 0 $cube-size/2 rgba(220, 220, 220, 0.2) inset;
+  backface-visibility: hidden;
+  background-color: $cube-color;
+  background-image: url($bg-grid);
+  background-size: cover;
+}
+.cube__face:nth-child(2n) {
+  filter: brightness(0.97);
+}
+.cube__face:nth-child(n + 5) {
+  filter: brightness(1.03);
+}
+
+.cube__face:nth-child(1) {
+  transform: rotateY(0deg) translateZ($cube-size/2);
+}
+.cube__face:nth-child(2) {
+  transform: rotateY(90deg) translateZ($cube-size/2);
+}
+.cube__face:nth-child(3) {
+  transform: rotateY(180deg) translateZ($cube-size/2);
+}
+.cube__face:nth-child(4) {
+  transform: rotateY(270deg) translateZ($cube-size/2);
+}
+.cube__face:nth-child(5) {
+  transform: rotateX(90deg) translateZ($cube-size/2);
+}
+.cube__face:nth-child(6) {
+  transform: rotateX(-90deg) translateZ($cube-size/2);
+}
+
+.face_bg {
+  background-size: 300% 300%;
+  background-repeat: no-repeat;
+}
+
+.face_bg-lt {
+  background-position: left top;
+}
+.face_bg-ct {
+  background-position: center top;
+}
+.face_bg-rt {
+  background-position: right top;
+}
+.face_bg-lc {
+  background-position: left center;
+}
+.face_bg-cc {
+  background-position: center center;
+}
+.face_bg-rc {
+  background-position: right center;
+}
+.face_bg-lb {
+  background-position: left bottom;
+}
+.face_bg-cb {
+  background-position: center bottom;
+}
+.face_bg-rb {
+  background-position: right bottom;
+}
+
+.bg1 {
+  background-image: url($bg-image1);
+}
+
+.bg2 {
+  background-image: url($bg-image2);
+}
+
+.bg3 {
+  background-image: url($bg-image3);
+}
+
+.bg4 {
+  background-image: url($bg-image4);
+}
+
+.bg5 {
+  background-image: url($bg-image5);
+}
+
+.bg6 {
+  background-image: url($bg-image6);
+}
+
+.comp-3d--o .cube__face.bg1 {
+  &.face_bg-rt {
+    transform: rotateY(90deg) translateZ($cube-size/2) scaleX(-1) scaleY(-1);
+  }
+  &.face_bg-lt {
+    transform: rotateY(90deg) translateZ($cube-size/2) scaleY(-1);
+  }
+  &.face_bg-rb {
+    transform: rotateY(90deg) translateZ($cube-size/2) scaleX(-1);
+  }
+}
+.comp-3d--o .cube__face.bg2 {
+  &.face_bg-rt {
+    transform: rotateY(0deg) translateZ($cube-size/2) scaleY(-1);
+  }
+  &.face_bg-lt {
+    transform: rotateY(0deg) translateZ($cube-size/2) scaleX(-1) scaleY(-1);
+  }
+  &.face_bg-lb {
+    transform: rotateY(0deg) translateZ($cube-size/2) scaleX(-1);
+  }
+}
+.comp-3d--o .cube__face.bg3 {
+  &.face_bg-rb {
+    transform: rotateX(-90deg) translateZ($cube-size/2) scaleY(-1);
+  }
+  &.face_bg-lt {
+    transform: rotateX(-90deg) translateZ($cube-size/2) scaleX(-1);
+  }
+  &.face_bg-lb {
+    transform: rotateX(-90deg) translateZ($cube-size/2) scaleX(-1) scaleY(-1);
+  }
+}
+.comp-3d--o .cube__face.bg4 {
+  &.face_bg-rt {
+    transform: rotateX(0deg) translateZ($cube-size/2) scaleY(-1);
+  }
+  &.face_bg-lt {
+    transform: rotateX(0deg) translateZ($cube-size/2) scaleX(-1) scaleY(-1);
+  }
+  &.face_bg-lb {
+    transform: rotateX(0deg) translateZ($cube-size/2) scaleX(-1) scaleY(-1)
+      scaleY(-1);
+  }
+}
+.comp-3d--o .cube__face.bg5 {
+  &.face_bg-rt {
+    transform: rotateY(90deg) translateZ($cube-size/2) scaleX(-1) scaleY(-1);
+  }
+  &.face_bg-lt {
+    transform: rotateY(90deg) translateZ($cube-size/2) scaleY(-1);
+  }
+  &.face_bg-rb {
+    transform: rotateY(90deg) translateZ($cube-size/2) scaleX(-1) scaleY(-1)
+      scaleY(-1);
+  }
+}
+.comp-3d--o .cube__face.bg6 {
+  &.face_bg-rb {
+    transform: rotateX(-90deg) translateZ($cube-size/2) scaleY(-1);
+  }
+  &.face_bg-lt {
+    transform: rotateX(-90deg) translateZ($cube-size/2) scaleX(-1);
+  }
+  &.face_bg-lb {
+    transform: rotateX(-90deg) translateZ($cube-size/2) scaleX(-1) scaleY(-1);
+  }
+}
+
+@keyframes m {
+  0%,
+  2.5%,
+  47.5%,
+  50% {
+    transform: none;
+  }
+  7.5% {
+    transform: translate3d(0, $cube-size, 0);
+  }
+  12.5% {
+    transform: translate3d(0, $cube-size, $cube-size);
+  }
+  17.5%,
+  32.5% {
+    transform: translate3d($cube-size, $cube-size, $cube-size);
+  }
+  37.5% {
+    transform: translate3d($cube-size, 0, $cube-size);
+  }
+  42.5% {
+    transform: translate3d($cube-size, 0, 0);
+  }
+}
+
+// 內方塊旋轉
+@keyframes ri {
+  0%,
+  10%,
+  50.0001% {
+    transform: none;
+  }
+  25% {
+    transform: rotateX(0turn) rotateY(-1turn);
+  }
+  50%,
+  40% {
+    transform: rotateX(-1turn) rotateY(-1turn);
+  }
+}
+
+// 外圍展開旋轉
+@keyframes ro {
+  0%,
+  17.5%,
+  50.0001% {
+    transform: none;
+  }
+  32.5%,
+  50% {
+    transform: rotate(-1turn);
+  }
+}
+
+//視角
+@keyframes cemara {
+  0%,
+  100% {
+    transform: rotateX(-18deg) rotateY(-136deg);
+  }
+  25% {
+    transform: rotateX(-190deg) rotateY(-50deg);
+  }
+  75% {
+    transform: rotateX(160deg) rotateY(125deg);
+  }
+  50% {
+    transform: rotateX(12deg) rotateY(12deg);
+  }
+}
